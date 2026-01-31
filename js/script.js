@@ -6,6 +6,21 @@ window.addEventListener('scroll',()=>{
   })
 });
 
+// Toggle project details
+const btnDetails = document.querySelectorAll('.btn-details');
+btnDetails.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const details = btn.nextElementSibling;
+    if (details.style.display === 'none' || details.style.display === '') {
+      details.style.display = 'block';
+      btn.textContent = 'Voir moins';
+    } else {
+      details.style.display = 'none';
+      btn.textContent = 'Voir plus';
+    }
+  });
+});
+
 // Gallery lightbox functionality
 const galleryImages = document.querySelectorAll('.card img');
 galleryImages.forEach(img => {
@@ -32,4 +47,5 @@ galleryImages.forEach(img => {
     });
   });
 });
+
 
